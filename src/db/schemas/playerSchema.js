@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+
 const { Schema } = mongoose;
 
 const playerHobbySchema = new Schema(
@@ -9,7 +10,7 @@ const playerHobbySchema = new Schema(
   { _id: false }
 );
 
-const playerSchema = new Schema({
+export const playerSchema = new Schema({
   firstName: {
     type: String,
     required: true
@@ -40,5 +41,3 @@ const playerSchema = new Schema({
   history: [playerHobbySchema],
   historyObject: playerHobbySchema
 });
-
-export const Player = mongoose.model("player", playerSchema);
